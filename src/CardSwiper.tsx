@@ -9,7 +9,7 @@ type TProps = {
   throwLimit?: number;
 };
 
-function CardSwiper(props: TProps) {
+export const CardSwiper = (props: TProps) => {
   const target = useRef<HTMLDivElement>(null);
   const x = useRef<number>(0);
   const y = useRef<number>(0);
@@ -238,5 +238,4 @@ function CardSwiper(props: TProps) {
       {props.contents}
     </div>
   );
-}
-export default CardSwiper;
+};

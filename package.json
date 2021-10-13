@@ -1,6 +1,6 @@
 {
   "name": "react-card-rotate-swiper",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "React card rotate swiper module with Typescript",
   "homepage": "https://github.com/Songkiyeon/react-card-rotate-swiper",
   "main": "dist/index.js",
