@@ -1,8 +1,8 @@
 {
-  "name": "@tofusoup429/react-component-module-frame",
+  "name": "react-card-rotate-swiper",
   "version": "0.0.10",
-  "description": "React module frame",
-  "homepage": "https://github.com/tofusoup429/react-component-module-frame",
+  "description": "React card rotate swiper module with Typescript",
+  "homepage": "https://github.com/Songkiyeon/react-card-rotate-swiper",
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
@@ -24,5 +24,8 @@
   "files": [
     "/dist",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "gsap": "^3.8.0"
+  }
 }
