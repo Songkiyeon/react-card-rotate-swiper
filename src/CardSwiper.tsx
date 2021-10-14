@@ -156,15 +156,15 @@ export const CardSwiper = (props: TProps) => {
 
   const handleMouseDown = (e: any) => {
     mouseClicked.current = true;
-    const mx = e.screenX;
-    const my = e.screenY;
+    const mx = e.clientX;
+    const my = e.clientY;
     onStart(mx, my);
   };
 
   const handleMouseMove = (e: any) => {
     if (mouseClicked.current) {
-      const mx = e.screenX;
-      const my = e.screenY;
+      const mx = e.clientX;
+      const my = e.clientY;
       onMove(mx, my);
     }
   };
@@ -172,8 +172,8 @@ export const CardSwiper = (props: TProps) => {
   const handleMouseUp = (e: any) => {
     if (mouseClicked.current) {
       mouseClicked.current = false;
-      const mx = e.screenX;
-      const my = e.screenY;
+      const mx = e.clientX;
+      const my = e.clientY;
       onEnd(mx, my);
     }
   };
@@ -181,8 +181,8 @@ export const CardSwiper = (props: TProps) => {
   const handleMouseLeave = (e: any) => {
     if (mouseClicked.current) {
       mouseClicked.current = false;
-      const mx = e.screenX;
-      const my = e.screenY;
+      const mx = e.clientX;
+      const my = e.clientY;
       onEnd(mx, my);
     }
   };

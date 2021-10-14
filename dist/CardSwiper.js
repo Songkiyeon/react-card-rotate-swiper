@@ -58,17 +58,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CardSwiper = void 0;
 var react_1 = __importStar(require("react"));
 var gsap_1 = __importDefault(require("gsap"));
-function CardSwiper(props) {
-    var _this = this;
+var CardSwiper = function (props) {
     var _a;
     var target = react_1.useRef(null);
     var x = react_1.useRef(0);
     var y = react_1.useRef(0);
     var mid = react_1.useRef(0);
     var angleMax = 30;
-    var getRotateOrigin = function (mx) { return __awaiter(_this, void 0, void 0, function () {
+    var getRotateOrigin = function (mx) { return __awaiter(void 0, void 0, void 0, function () {
         var result;
         return __generator(this, function (_a) {
             result = [];
@@ -97,7 +97,7 @@ function CardSwiper(props) {
             return [2 /*return*/];
         });
     }); };
-    var selectDirection = function (mx, my) { return __awaiter(_this, void 0, void 0, function () {
+    var selectDirection = function (mx, my) { return __awaiter(void 0, void 0, void 0, function () {
         var _a, _b, _c, _d;
         return __generator(this, function (_e) {
             if (mx - x.current > ((_a = props.detectingSize) !== null && _a !== void 0 ? _a : 100)) {
@@ -117,14 +117,14 @@ function CardSwiper(props) {
             return [2 /*return*/];
         });
     }); };
-    var onStart = function (mx, my) { return __awaiter(_this, void 0, void 0, function () {
+    var onStart = function (mx, my) { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             x.current = mx;
             y.current = my;
             return [2 /*return*/];
         });
     }); };
-    var onMove = function (mx, my) { return __awaiter(_this, void 0, void 0, function () {
+    var onMove = function (mx, my) { return __awaiter(void 0, void 0, void 0, function () {
         var origin, angle;
         var _a;
         return __generator(this, function (_b) {
@@ -152,7 +152,7 @@ function CardSwiper(props) {
             }
         });
     }); };
-    var onEnd = function (mx, my) { return __awaiter(_this, void 0, void 0, function () {
+    var onEnd = function (mx, my) { return __awaiter(void 0, void 0, void 0, function () {
         var mid, angle, d, tl, tl;
         var _a, _b, _c, _d, _e, _f, _g;
         return __generator(this, function (_h) {
@@ -234,30 +234,30 @@ function CardSwiper(props) {
     var mouseClicked = react_1.useRef(false);
     var handleMouseDown = function (e) {
         mouseClicked.current = true;
-        var mx = e.screenX;
-        var my = e.screenY;
+        var mx = e.clientX;
+        var my = e.clientY;
         onStart(mx, my);
     };
     var handleMouseMove = function (e) {
         if (mouseClicked.current) {
-            var mx = e.screenX;
-            var my = e.screenY;
+            var mx = e.clientX;
+            var my = e.clientY;
             onMove(mx, my);
         }
     };
     var handleMouseUp = function (e) {
         if (mouseClicked.current) {
             mouseClicked.current = false;
-            var mx = e.screenX;
-            var my = e.screenY;
+            var mx = e.clientX;
+            var my = e.clientY;
             onEnd(mx, my);
         }
     };
     var handleMouseLeave = function (e) {
         if (mouseClicked.current) {
             mouseClicked.current = false;
-            var mx = e.screenX;
-            var my = e.screenY;
+            var mx = e.clientX;
+            var my = e.clientY;
             onEnd(mx, my);
         }
     };
@@ -292,5 +292,5 @@ function CardSwiper(props) {
         }
     }, []);
     return (react_1.default.createElement("div", { ref: target, className: (_a = props.className) !== null && _a !== void 0 ? _a : "", onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, onMouseDown: handleMouseDown, onMouseMove: handleMouseMove, onMouseUp: handleMouseUp, onMouseLeave: handleMouseLeave }, props.contents));
-}
-exports.default = CardSwiper;
+};
+exports.CardSwiper = CardSwiper;

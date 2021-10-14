@@ -6,5 +6,5 @@ declare type TProps = {
     detectingSize?: number;
     throwLimit?: number;
 };
-declare function CardSwiper(props: TProps): JSX.Element;
-export default CardSwiper;
+export declare const CardSwiper: (props: TProps) => JSX.Element;
+export {};
