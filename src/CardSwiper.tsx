@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { TouchEvent, MouseEvent, useEffect, useRef } from "react";
 import gsap from "gsap";
 
 type TProps = {
@@ -133,20 +133,20 @@ export const CardSwiper = (props: TProps) => {
     await props.onSwipe?.(d);
   };
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: TouchEvent<HTMLElement>) => {
     const mx = e.targetTouches[0].clientX;
     const my = e.targetTouches[0].clientY;
 
     onStart(mx, my);
   };
 
-  const handleTouchMove = (e: any) => {
+  const handleTouchMove = (e: TouchEvent<HTMLElement>) => {
     const mx = e.changedTouches[0].clientX;
     const my = e.changedTouches[0].clientY;
     onMove(mx, my);
   };
 
-  const handleTouchEnd = (e: any) => {
+  const handleTouchEnd = (e: TouchEvent<HTMLElement>) => {
     const mx = e.changedTouches[0].clientX;
     const my = e.changedTouches[0].clientY;
     onEnd(mx, my);
@@ -154,14 +154,14 @@ export const CardSwiper = (props: TProps) => {
 
   const mouseClicked = useRef<Boolean>(false);
 
-  const handleMouseDown = (e: any) => {
+  const handleMouseDown = (e: MouseEvent<HTMLElement>) => {
     mouseClicked.current = true;
     const mx = e.clientX;
     const my = e.clientY;
     onStart(mx, my);
   };
 
-  const handleMouseMove = (e: any) => {
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
     if (mouseClicked.current) {
       const mx = e.clientX;
       const my = e.clientY;
@@ -169,7 +169,7 @@ export const CardSwiper = (props: TProps) => {
     }
   };
 
-  const handleMouseUp = (e: any) => {
+  const handleMouseUp = (e: MouseEvent<HTMLElement>) => {
     if (mouseClicked.current) {
       mouseClicked.current = false;
       const mx = e.clientX;
@@ -178,7 +178,7 @@ export const CardSwiper = (props: TProps) => {
     }
   };
 
-  const handleMouseLeave = (e: any) => {
+  const handleMouseLeave = (e: MouseEvent<HTMLElement>) => {
     if (mouseClicked.current) {
       mouseClicked.current = false;
       const mx = e.clientX;
